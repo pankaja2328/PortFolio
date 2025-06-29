@@ -23,7 +23,7 @@ const Contact = () => {
     setStatus('loading');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('http://localhost:3001/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,8 +61,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      value: '+94 77 123 4567',
-      href: 'tel:+94771234567'
+      value: '+94 76 302 6019',
+      href: 'tel:+94763026019'
     },
     {
       icon: MapPin,

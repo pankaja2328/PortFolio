@@ -27,8 +27,8 @@ const Education = () => {
     },
     {
       degree: 'Advanced Level - Physical Science Stream',
-      institution: 'Mahinda College',
-      location: 'Galle, Sri Lanka',
+      institution: 'C.W.W. Kannangara Central College',
+      location: 'Hunumulla, Sri Lanka',
       period: '2018 - 2020',
       status: 'Completed',
       description: 'Mathematics, Physics, and Chemistry with Information & Communication Technology. Strong foundation in mathematical and scientific principles.',

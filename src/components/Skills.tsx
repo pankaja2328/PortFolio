@@ -32,9 +32,9 @@ const Skills = () => {
     {
       title: 'Hardware & Tools',
       skills: [
-        { name: 'PCB Design', level: 85 },
-        { name: 'Altium Designer', level: 80 },
-        { name: 'Oscilloscope', level: 85 },
+        { name: 'PCB Design', level: 90 },
+        { name: 'EasyEDA Designer', level: 90 },
+        { name: 'Oscilloscope', level: 75 },
         { name: 'Logic Analyzer', level: 80 },
         { name: 'Multimeter', level: 90 }
       ]
@@ -45,7 +45,7 @@ const Skills = () => {
         { name: 'IoT Development', level: 90 },
         { name: 'MQTT Protocol', level: 85 },
         { name: 'Bluetooth/WiFi', level: 85 },
-        { name: 'Machine Learning', level: 75 },
+        { name: 'Machine Learning', level: 85 },
         { name: 'Real-time Systems', level: 80 }
       ]
     }

@@ -51,11 +51,11 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <motion.div
+            <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-          >
+            >
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-orange-500">
               Embedded Systems Engineer
             </h3>
@@ -74,24 +74,26 @@ const About = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="space-y-2">
-                <p className="text-gray-400"><span className="text-orange-500 font-semibold">Email:</span></p>
-                <p className="text-white">pankajamalshan@gmail.com</p>
+              <p className="text-gray-400"><span className="text-orange-500 font-semibold">Email:</span></p>
+              <p className="text-white">pankajamalshan@gmail.com</p>
               </div>
               <div className="space-y-2">
-                <p className="text-gray-400"><span className="text-orange-500 font-semibold">Location:</span></p>
-                <p className="text-white">Sri Lanka</p>
+              <p className="text-gray-400"><span className="text-orange-500 font-semibold">Location:</span></p>
+              <p className="text-white">Sri Lanka</p>
               </div>
             </div>
 
-            <motion.button
+            <motion.a
+              href="/cv/Blue%20and%20White%20Clean%20and%20Professional%20Resume.pdf"
+              download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary"
+              className="btn-primary inline-flex items-center"
             >
               <Download className="w-5 h-5 mr-2" />
               Download Resume
-            </motion.button>
-          </motion.div>
+            </motion.a>
+            </motion.div>
 
           {/* Highlights Grid */}
           <motion.div

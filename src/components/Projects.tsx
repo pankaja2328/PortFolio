@@ -12,73 +12,74 @@ const Projects = () => {
   const [filter, setFilter] = useState('all');
 
   const projects = [
-    {
-      id: 1,
-      title: 'ESP-IDF Libraries',
-      description: 'Comprehensive collection of ESP-IDF libraries for various sensors and modules, providing easy-to-use APIs for embedded development.',
-      category: 'embedded',
-      technologies: ['ESP32', 'ESP-IDF', 'C/C++', 'FreeRTOS'],
-      icon: Cpu,
-      image: 'https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&w=600',
-      github: 'https://github.com/pankaja2328/ESP-IDF-Libraries.git',
-      demo: '#'
-    },
-    {
-      id: 2,
-      title: 'ALL-IN-ONE ADVENTURE COMPANION WEARABLE',
-      description: 'Advanced wearable device for outdoor adventures with GPS tracking, environmental monitoring, and emergency features.',
-      category: 'iot',
-      technologies: ['ESP32', 'GPS', 'Sensors', 'Mobile App'],
-      icon: Wifi,
-      image: 'https://images.pexels.com/photos/4792741/pexels-photo-4792741.jpeg?auto=compress&cs=tinysrgb&w=600',
-      github: 'https://github.com/Dinith132/ALL-IN-ONE-ADVENTURE-COMPANION-WEARABLE.git',
-      demo: '#'
-    },
-    {
-      id: 3,
-      title: 'ZoomClone',
-      description: 'Video conferencing application clone with real-time communication features and screen sharing capabilities.',
-      category: 'software',
-      technologies: ['React', 'Node.js', 'WebRTC', 'Socket.io'],
-      icon: Brain,
-      image: 'https://images.pexels.com/photos/4031818/pexels-photo-4031818.jpeg?auto=compress&cs=tinysrgb&w=600',
-      github: 'https://github.com/pankaja2328/ZoomCLone.git',
-      demo: '#'
-    },
-    {
-      id: 4,
-      title: 'Smart Home IoT System',
-      description: 'Complete home automation system using ESP32 with mobile app control, voice commands, and energy monitoring.',
-      category: 'iot',
-      technologies: ['ESP32', 'Flutter', 'Firebase', 'MQTT'],
-      icon: Wifi,
-      image: 'https://images.pexels.com/photos/4792741/pexels-photo-4792741.jpeg?auto=compress&cs=tinysrgb&w=600',
-      github: '#',
-      demo: '#'
-    },
-    {
-      id: 5,
-      title: 'Wireless Sensor Network',
-      description: 'Multi-node sensor network for environmental monitoring with mesh networking and low power consumption.',
-      category: 'iot',
-      technologies: ['Arduino', 'LoRa', 'MySQL', 'PHP'],
-      icon: Wifi,
-      image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=600',
-      github: '#',
-      demo: '#'
-    },
-    {
-      id: 6,
-      title: 'RFID Access Control',
-      description: 'Secure access control system with RFID authentication, logging, and admin dashboard.',
-      category: 'embedded',
-      technologies: ['Arduino', 'RFID', 'LCD', 'Servo'],
-      icon: Cpu,
-      image: 'https://images.pexels.com/photos/8171208/pexels-photo-8171208.jpeg?auto=compress&cs=tinysrgb&w=600',
-      github: '#',
-      demo: '#'
-    }
-  ];
+  {
+    id: 1,
+    title: 'AI-Based Optimized Energy Utilization System',
+    description: 'Edge-deployed AI system using LSTM and Q-learning for smart home energy optimization based on real-time electricity pricing and weather data.',
+    category: 'iot',
+    technologies: ['ESP32', 'Raspberry Pi', 'Python', 'LSTM', 'Q-learning', 'MQTT'],
+    icon: Wifi,
+    image: 'https://images.pexels.com/photos/6985180/pexels-photo-6985180.jpeg?auto=compress&cs=tinysrgb&w=600',
+    github: '#',
+    demo: '#'
+  },
+  {
+    id: 2,
+    title: 'ESP-IDF Libraries',
+    description: 'Comprehensive collection of ESP-IDF libraries for various sensors and modules, providing easy-to-use APIs for embedded development.',
+    category: 'embedded',
+    technologies: ['ESP32', 'ESP-IDF', 'C/C++', 'FreeRTOS'],
+    icon: Cpu,
+    image: 'https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&w=600',
+    github: 'https://github.com/pankaja2328/ESP-IDF-Libraries.git',
+    demo: '#'
+  },
+  {
+    id: 3,
+    title: 'All-in-One Adventure Companion Wearable',
+    description: 'Advanced wearable for outdoor adventurers with GPS, Bluetooth, MAX30100, and real-time health/environmental monitoring.',
+    category: 'iot',
+    technologies: ['ESP32', 'ESP-IDF', 'Bluetooth', 'C', 'EasyEDA'],
+    icon: Wifi,
+    image: 'https://images.pexels.com/photos/4792741/pexels-photo-4792741.jpeg?auto=compress&cs=tinysrgb&w=600',
+    github: 'https://github.com/Dinith132/ALL-IN-ONE-ADVENTURE-COMPANION-WEARABLE.git',
+    demo: '#'
+  },
+  {
+    id: 4,
+    title: 'Smart Water Planting System',
+    description: 'Smart ATmega328P-based system for plant health with soil sensing, serial desktop UI, and email alerts.',
+    category: 'embedded',
+    technologies: ['ATmega328P', 'Bluetooth', 'Arduino', 'Proteus'],
+    icon: Cpu,
+    image: 'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600',
+    github: '#',
+    demo: '#'
+  },
+  {
+    id: 5,
+    title: 'Real-Time Video Calling Web Application',
+    description: 'Zoom-like video chat app using WebRTC and Firebase, supporting peer-to-peer audio/video calls with room management.',
+    category: 'software',
+    technologies: ['WebRTC', 'Firebase', 'JavaScript', 'React'],
+    icon: Brain,
+    image: 'https://images.pexels.com/photos/4031818/pexels-photo-4031818.jpeg?auto=compress&cs=tinysrgb&w=600',
+    github: 'https://github.com/pankaja2328/ZoomCLone.git',
+    demo: '#'
+  },
+  {
+    id: 6,
+    title: 'Image Caption Generator Using CNN-LSTM',
+    description: 'Built from scratch using custom CNN encoder and LSTM decoder with attention for generating image captions.',
+    category: 'software',
+    technologies: ['Python', 'TensorFlow', 'CNN', 'LSTM'],
+    icon: Brain,
+    image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+    github: '#',
+    demo: '#'
+  }
+];
+
 
   const categories = [
     { id: 'all', label: 'All Projects' },

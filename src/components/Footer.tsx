@@ -67,7 +67,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Get In Touch</h4>
             <div className="space-y-3 text-gray-400">
               <p>📧 pankajamalshan@gmail.com</p>
-              <p>📱 +94 77 123 4567</p>
+              <p>📱 +94 76 302 6019</p>
               <p>📍 Sri Lanka</p>
             </div>
           </div>
