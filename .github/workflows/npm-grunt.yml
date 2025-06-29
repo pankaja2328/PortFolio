@@ -20,15 +20,17 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm ci
+      - name: Install Grunt CLI (if not in devDependencies)
+        run: npm install -g grunt-cli
+        if: steps.install-dependencies.outcome == 'success' && !exists('node_modules/.bin/grunt')
       - name: Build
         run: grunt
-      # Only upload artifact for one Node version to avoid duplicates
       - name: Upload build artifact
         if: matrix.node-version == '22.x'
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: ./dist   # Change to your build output directory
+          path: ./dist
 
   deploy:
     needs: build
@@ -45,3 +47,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages
+          keep_files: false
