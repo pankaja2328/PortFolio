@@ -22,6 +22,7 @@ jobs:
         run: npm ci
       - name: Build
         run: grunt
+      # Only upload artifact for one Node version to avoid duplicates
       - name: Upload build artifact
         if: matrix.node-version == '22.x'
         uses: actions/upload-artifact@v4
