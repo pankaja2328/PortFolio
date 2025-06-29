@@ -84,8 +84,7 @@ const About = () => {
             </div>
 
             <motion.a
-              href="https://drive.google.com/uc?export=download&id=1ZYxEc4feuAaa1Yzqm6ovFkfbVqGx40Pp
-"
+              href="https://drive.google.com/uc?export=download&id=1ZYxEc4feuAaa1Yzqm6ovFkfbVqGx40Pp"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
