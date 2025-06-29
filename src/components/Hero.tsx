@@ -147,7 +147,7 @@ const Hero = () => {
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-orange-500/20 to-blue-500/20 p-1">
                 <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
                   <img
-                    src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400"
+                    src="https://drive.google.com/file/d/1OGrHWG9eW_dinrXUmrEFeJTD5SorpwmC/view?usp=sharing"
                     alt="Pankaja Malshan"
                     className="w-full h-full object-cover rounded-full"
                   />
