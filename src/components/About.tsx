@@ -84,7 +84,8 @@ const About = () => {
             </div>
 
             <motion.a
-              href="https://github.com/pankaja2328/PortFolio/blob/master/cv/Blue%20and%20White%20Clean%20and%20Professional%20Resume.pdf"
+              href="https://drive.google.com/uc?export=download&id=1ZYxEc4feuAaa1Yzqm6ovFkfbVqGx40Pp
+"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
