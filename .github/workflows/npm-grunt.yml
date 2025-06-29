@@ -20,9 +20,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm ci
-      - name: Install Grunt CLI (if not in devDependencies)
+      - name: Install Grunt CLI
         run: npm install -g grunt-cli
-        if: steps.install-dependencies.outcome == 'success' && !exists('node_modules/.bin/grunt')
       - name: Build
         run: grunt
       - name: Upload build artifact
@@ -47,5 +46,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: gh-pages
-          keep_files: false
