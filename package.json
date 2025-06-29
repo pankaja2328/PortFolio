@@ -1,5 +1,6 @@
 {
   "name": "embedded-systems-portfolio",
+  "homepage": "https://pankaja2328.github.io/PortFolio/",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,18 +10,21 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node server/index.js",
-    "dev:full": "concurrently \"npm run server\" \"npm run dev\""
+    "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "framer-motion": "^10.16.5",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.344.0",
+    "nodemailer": "^6.9.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "framer-motion": "^10.16.5",
-    "react-intersection-observer": "^9.5.3",
-    "express": "^4.18.2",
-    "cors": "^2.8.5",
-    "nodemailer": "^6.9.7",
-    "dotenv": "^16.3.1"
+    "react-intersection-observer": "^9.5.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
