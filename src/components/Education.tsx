@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award, BookOpen } from 'lucide-react';
 
 const Education = () => {
   const [ref, inView] = useInView({
@@ -11,48 +11,47 @@ const Education = () => {
 
   const education = [
     {
-      degree: 'Bachelor of Engineering in Computer Engineering',
+      degree: 'B.Sc. Engineering (Hons.) in Computer Engineering',
       institution: 'University of Jaffna',
       location: 'Jaffna, Sri Lanka',
-      period: '2020 - Present',
-      status: 'Pursuing',
-      description: 'Specialized in embedded systems, computer architecture, and software engineering. Focus on IoT development, AI integration, and real-time systems.',
+      period: 'Apr 2022 – Expected Aug 2026',
+      status: 'In Progress',
+      description: 'Specializing in computer architecture, firmware development, embedded microcontrollers, operating systems, and hardware-software integration.',
       achievements: [
-        'Strong foundation in embedded systems design',
-        'Hands-on experience with microcontrollers',
-        'Active participation in engineering projects'
+        'Hands-on expertise in FreeRTOS, ESP32, STM32, and TI platforms',
+        'Advanced coursework in real-time control, IoT telemetry, and digital signal processing',
+        'Active contributor to departmental hardware and software projects'
       ],
       icon: GraduationCap,
-      image: 'https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
-      degree: 'Advanced Level - Physical Science Stream',
+      degree: 'G.C.E. Advanced Level - Physical Science Stream',
       institution: 'C.W.W. Kannangara Central College',
       location: 'Hunumulla, Sri Lanka',
-      period: '2018 - 2020',
+      period: '2018 – 2020',
       status: 'Completed',
-      description: 'Mathematics, Physics, and Chemistry with Information & Communication Technology. Strong foundation in mathematical and scientific principles.',
+      description: 'Combined Mathematics, Physics, Chemistry, and Information & Communication Technology.',
       achievements: [
-        'Excellent performance in science subjects',
-        'Strong mathematical foundation',
-        'Early exposure to programming concepts'
+        'High achievement in Combined Mathematics and Physics',
+        'Strong theoretical foundation for physical engineering systems',
+        'Early practical programming and circuit fundamentals'
       ],
       icon: Award,
-      image: 'https://images.pexels.com/photos/289737/pexels-photo-289737.jpeg?auto=compress&cs=tinysrgb&w=600'
     }
   ];
 
-  const certifications = [
-    'Embedded Systems Programming - Online Courses',
-    'IoT Application Development - Self-Study',
-    'Machine Learning Fundamentals - Online Learning',
-    'PCB Design and Manufacturing - Practical Experience',
-    'Industrial Automation - Project Work'
+  const coreCompetencies = [
+    'Embedded C / C++ & Assembly Architecture',
+    'FreeRTOS Real-Time Task Scheduling & Queues',
+    'PID Closed-Loop Controller Design & Rotary Feedback',
+    'Peripheral Drivers: I2C, SPI, UART, ADC, BLE GATT',
+    'Hardware Bring-Up: Oscilloscopes, Logic Analyzers, JTAG',
+    'PCB Design & Circuit Simulation (EasyEDA, Proteus)'
   ];
 
   return (
     <section id="education" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-gray-800"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900"></div>
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           ref={ref}
@@ -66,15 +65,17 @@ const Education = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-blue-500 mx-auto mb-6"></div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Building a strong foundation in engineering and technology through 
-            formal education and continuous learning.
+            Academic background in Computer Engineering at University of Jaffna, complemented by hands-on firmware research.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Education Timeline */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-orange-500 mb-8">Academic Journey</h3>
+            <h3 className="text-2xl font-bold text-orange-500 mb-8 flex items-center gap-2">
+              <BookOpen className="w-6 h-6" />
+              <span>Academic Degree & Qualifications</span>
+            </h3>
             {education.map((edu, index) => (
               <motion.div
                 key={edu.degree}
@@ -85,38 +86,38 @@ const Education = () => {
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <edu.icon className="w-6 h-6 text-orange-500" />
+                    <edu.icon className="w-6 h-6 text-orange-400" />
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                       <h4 className="text-xl font-bold text-white">{edu.degree}</h4>
-                      <span className={`text-sm px-3 py-1 rounded-full ${
-                        edu.status === 'Pursuing' 
-                          ? 'bg-orange-500/20 text-orange-500' 
-                          : 'bg-green-500/20 text-green-500'
+                      <span className={`text-xs px-3 py-1 rounded-full font-semibold w-fit mt-1 md:mt-0 ${
+                        edu.status === 'In Progress' 
+                          ? 'bg-orange-500/20 text-orange-400 border border-orange-500/30' 
+                          : 'bg-green-500/20 text-green-400 border border-green-500/30'
                       }`}>
                         {edu.status}
                       </span>
                     </div>
-                    <p className="text-lg text-gray-300 mb-2">{edu.institution}</p>
-                    <div className="flex items-center gap-4 text-gray-400 text-sm mb-4">
+                    <p className="text-lg font-semibold text-orange-400 mb-2">{edu.institution}</p>
+                    <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm mb-4">
                       <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
+                        <Calendar className="w-4 h-4 text-orange-400" />
                         <span>{edu.period}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
+                        <MapPin className="w-4 h-4 text-blue-400" />
                         <span>{edu.location}</span>
                       </div>
                     </div>
-                    <p className="text-gray-300 mb-4">{edu.description}</p>
+                    <p className="text-gray-300 mb-4 leading-relaxed">{edu.description}</p>
                     <div className="space-y-2">
-                      <h5 className="font-semibold text-orange-500">Key Achievements:</h5>
-                      <ul className="space-y-1">
+                      <h5 className="font-semibold text-white text-sm">Key Focus & Achievements:</h5>
+                      <ul className="space-y-1.5">
                         {edu.achievements.map((achievement, i) => (
-                          <li key={i} className="text-gray-300 text-sm flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
-                            {achievement}
+                          <li key={i} className="text-gray-300 text-sm flex items-start gap-2">
+                            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span>{achievement}</span>
                           </li>
                         ))}
                       </ul>
@@ -127,43 +128,41 @@ const Education = () => {
             ))}
           </div>
 
-          {/* Certifications */}
+          {/* Core Engineering Foundations */}
           <div className="space-y-8">
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <h3 className="text-2xl font-bold text-orange-500 mb-8">Skills & Learning</h3>
-              <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-                <div className="space-y-4">
-                  {certifications.map((cert, index) => (
-                    <motion.div
-                      key={cert}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={inView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                      className="flex items-center gap-3 p-3 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors"
-                    >
-                      <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                      <span className="text-gray-300">{cert}</span>
-                    </motion.div>
-                  ))}
-                </div>
+              <h3 className="text-2xl font-bold text-orange-500 mb-8">Engineering Focus Areas</h3>
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 space-y-4">
+                {coreCompetencies.map((comp, index) => (
+                  <motion.div
+                    key={comp}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    className="flex items-center gap-3 p-3.5 bg-gray-700/30 rounded-xl hover:bg-gray-700/50 border border-gray-700/40 transition-colors"
+                  >
+                    <div className="w-2.5 h-2.5 bg-orange-500 rounded-full"></div>
+                    <span className="text-gray-200 font-medium text-sm">{comp}</span>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
 
-            {/* Quote */}
+            {/* University Quote / Motto */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="bg-gradient-to-r from-orange-500/10 to-blue-500/10 rounded-xl p-6 border border-orange-500/20"
+              className="bg-gradient-to-r from-orange-500/10 via-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-orange-500/20"
             >
-              <blockquote className="text-gray-300 italic text-lg mb-4">
-                "Education is not the learning of facts, but the training of the mind to think."
+              <blockquote className="text-gray-300 italic text-base mb-3 leading-relaxed">
+                "Driven by precision engineering and low-level firmware optimization to connect hardware seamlessly with smart environments."
               </blockquote>
-              <cite className="text-orange-500 font-semibold">- Albert Einstein</cite>
+              <cite className="text-orange-400 font-semibold text-sm">- Pankaja Malshan</cite>
             </motion.div>
           </div>
         </div>
