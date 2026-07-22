@@ -167,14 +167,14 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex-1 flex justify-center lg:justify-end"
           >
-            <div className="relative">
+            <div className="relative px-8 py-6">
               {/* Outer decorative ring */}
               <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-orange-500 via-purple-600 to-blue-600 p-1 shadow-2xl shadow-orange-500/20">
                 <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center overflow-hidden relative">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+                    src="/profile.jpg"
                     alt="Pankaja Malshan"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent"></div>
                 </div>
@@ -182,30 +182,30 @@ const Hero = () => {
 
               {/* Floating badges */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
+                animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-4 -left-4 bg-gray-900/90 border border-gray-700/80 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-3"
+                className="absolute top-4 -left-6 bg-gray-900/95 border border-orange-500/30 backdrop-blur-md px-3 py-2 rounded-xl shadow-xl flex items-center gap-2.5 z-10"
               >
-                <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center text-orange-400">
+                <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center text-orange-400 shrink-0">
                   <Cpu className="w-5 h-5" />
                 </div>
-                <div>
-                  <div className="text-xs text-gray-400">Core Specialty</div>
-                  <div className="text-sm font-bold text-white">ESP32 & STM32</div>
+                <div className="min-w-0">
+                  <div className="text-xs text-gray-400 whitespace-nowrap">Core Specialty</div>
+                  <div className="text-sm font-bold text-white whitespace-nowrap">ESP32 & STM32</div>
                 </div>
               </motion.div>
 
               <motion.div
-                animate={{ y: [0, 10, 0] }}
+                animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-                className="absolute -bottom-4 -right-4 bg-gray-900/90 border border-gray-700/80 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-3"
+                className="absolute bottom-4 -right-6 bg-gray-900/95 border border-blue-500/30 backdrop-blur-md px-3 py-2 rounded-xl shadow-xl flex items-center gap-2.5 z-10"
               >
-                <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
+                <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
                   <span className="text-xs font-bold">RTOS</span>
                 </div>
-                <div>
-                  <div className="text-xs text-gray-400">Architecture</div>
-                  <div className="text-sm font-bold text-white">FreeRTOS & Bare-Metal</div>
+                <div className="min-w-0">
+                  <div className="text-xs text-gray-400 whitespace-nowrap">Architecture</div>
+                  <div className="text-sm font-bold text-white whitespace-nowrap">FreeRTOS & Bare-Metal</div>
                 </div>
               </motion.div>
             </div>
