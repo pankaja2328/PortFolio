@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Github, Linkedin, Mail, MapPin, Download, Cpu, Sparkles } from 'lucide-react';
+import profilePhoto from '/profile.jpg';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
@@ -172,7 +173,7 @@ const Hero = () => {
               <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-orange-500 via-purple-600 to-blue-600 p-1 shadow-2xl shadow-orange-500/20">
                 <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center overflow-hidden relative">
                   <img
-                    src="/profile.jpg"
+                    src={profilePhoto}
                     alt="Pankaja Malshan"
                     className="w-full h-full object-cover object-top"
                   />
