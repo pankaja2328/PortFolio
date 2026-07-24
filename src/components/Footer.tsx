@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Github, Linkedin, Mail, ArrowUp, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp, Download } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
@@ -24,13 +24,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gray-950 border-t border-gray-800/80">
+    <footer className="relative border-t" style={{ background: '#020810', borderColor: 'rgba(0,212,255,0.1)' }}>
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-8">
           {/* About */}
           <div>
             <h3 className="text-2xl font-bold gradient-text mb-4">Pankaja Malshan</h3>
-            <p className="text-gray-400 mb-6 leading-relaxed text-sm">
+            <p className="mb-6 leading-relaxed text-sm" style={{ color: 'rgba(226,240,255,0.5)' }}>
               Embedded Firmware Engineer specializing in ESP32, STM32, TI microcontrollers, FreeRTOS, and real-time wireless telemetry.
             </p>
             <div className="flex items-center gap-3">
@@ -40,7 +40,22 @@ const Footer = () => {
                   href={social.href}
                   target={social.href.startsWith('http') ? '_blank' : '_self'}
                   rel={social.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                  className="w-10 h-10 bg-gray-800/80 border border-gray-700/60 rounded-xl flex items-center justify-center text-gray-300 hover:text-orange-400 hover:border-orange-500/40 hover:scale-105 transition-all duration-300"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 border"
+                  style={{
+                    background: 'rgba(13,26,46,0.8)',
+                    borderColor: 'rgba(0,212,255,0.2)',
+                    color: 'rgba(226,240,255,0.7)',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = '#00d4ff';
+                    e.currentTarget.style.color = '#00d4ff';
+                    e.currentTarget.style.boxShadow = '0 0 15px rgba(0,212,255,0.2)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = 'rgba(0,212,255,0.2)';
+                    e.currentTarget.style.color = 'rgba(226,240,255,0.7)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -50,7 +65,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-base font-semibold text-white mb-4">Quick Links</h4>
+            <h4 className="text-base font-semibold mb-4" style={{ color: '#e2f0ff' }}>Quick Links</h4>
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.id}>
@@ -61,7 +76,10 @@ const Footer = () => {
                         element.scrollIntoView({ behavior: 'smooth' });
                       }
                     }}
-                    className="text-gray-400 hover:text-orange-400 transition-colors duration-200 text-sm font-medium"
+                    className="transition-colors duration-200 text-sm font-medium"
+                    style={{ color: 'rgba(226,240,255,0.5)' }}
+                    onMouseEnter={e => (e.currentTarget.style.color = '#00d4ff')}
+                    onMouseLeave={e => (e.currentTarget.style.color = 'rgba(226,240,255,0.5)')}
                   >
                     {link.label}
                   </button>
@@ -72,8 +90,8 @@ const Footer = () => {
 
           {/* Contact Info & Download */}
           <div>
-            <h4 className="text-base font-semibold text-white mb-4">Contact & CV</h4>
-            <div className="space-y-2 text-gray-400 text-sm mb-6">
+            <h4 className="text-base font-semibold mb-4" style={{ color: '#e2f0ff' }}>Contact & CV</h4>
+            <div className="space-y-2 text-sm mb-6" style={{ color: 'rgba(226,240,255,0.5)' }}>
               <p>📧 pankajamalshan@gmail.com</p>
               <p>📱 +94 76 302 6019</p>
               <p>📍 Negombo, Sri Lanka</p>
@@ -82,7 +100,20 @@ const Footer = () => {
             <a
               href="/Pankaja_Malshan_CV.pdf"
               download="Pankaja_Malshan_CV.pdf"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-500/30 text-orange-400 font-semibold text-sm rounded-xl transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2 border font-semibold text-sm rounded-xl transition-all"
+              style={{
+                background: 'rgba(0,212,255,0.08)',
+                borderColor: 'rgba(0,212,255,0.25)',
+                color: '#00d4ff',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = 'rgba(0,212,255,0.15)';
+                e.currentTarget.style.borderColor = 'rgba(0,212,255,0.45)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = 'rgba(0,212,255,0.08)';
+                e.currentTarget.style.borderColor = 'rgba(0,212,255,0.25)';
+              }}
             >
               <Download className="w-4 h-4" />
               <span>Download CV (PDF)</span>
@@ -90,13 +121,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800/80 mt-12 pt-8">
+        <div className="border-t mt-12 pt-8" style={{ borderColor: 'rgba(0,212,255,0.08)' }}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-400 text-sm text-center md:text-left">
+            <p className="text-sm text-center md:text-left" style={{ color: 'rgba(226,240,255,0.4)' }}>
               © {new Date().getFullYear()} Pankaja Malshan. All rights reserved.
             </p>
-            <p className="text-gray-400 text-sm flex items-center gap-1.5">
-              Built for <span className="text-white font-medium">Embedded Firmware Engineering</span>
+            <p className="text-sm flex items-center gap-1.5" style={{ color: 'rgba(226,240,255,0.4)' }}>
+              Built for <span className="font-medium" style={{ color: '#00d4ff' }}>Embedded Firmware Engineering</span>
             </p>
           </div>
         </div>
@@ -105,7 +136,12 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full flex items-center justify-center text-white shadow-xl shadow-orange-500/20 hover:scale-110 transition-all z-50"
+        className="fixed bottom-8 right-8 w-12 h-12 rounded-full flex items-center justify-center shadow-xl transition-all z-50"
+        style={{
+          background: 'linear-gradient(135deg, #00d4ff, #0099b8)',
+          color: '#050b18',
+          boxShadow: '0 0 20px rgba(0,212,255,0.3)',
+        }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >

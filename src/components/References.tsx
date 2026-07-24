@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { UserCheck, Mail, Phone, Building2 } from 'lucide-react';
+import { Award, CheckCircle } from 'lucide-react';
 
 const References = () => {
   const [ref, inView] = useInView({
@@ -11,85 +11,58 @@ const References = () => {
 
   const references = [
     {
-      name: 'Mr. Y. Pirunthapan',
-      title: 'Lecturer (Probationary)',
-      department: 'Department of Computer Engineering',
-      institution: 'University of Jaffna, Sri Lanka',
-      email: 'pirunthapany@eng.jfn.ac.lk',
-      phone: '+94 21 206 0160'
-    },
-    {
-      name: 'Dr. Jananie Jarachanthan',
-      title: 'Senior Lecturer',
-      department: 'Department of Computer Engineering',
-      institution: 'University of Jaffna, Sri Lanka',
-      email: 'jananie@eng.jfn.ac.lk',
-      phone: '+94 21 206 0161'
+      name: 'Professional & Academic References Available',
+      role: 'Upon Request',
+      organization: 'University of Jaffna & Industry Supervisors',
+      text: 'Detailed references from academic advisors and internship supervisors at ExcelTech Consulting can be provided upon request.',
     }
   ];
 
   return (
-    <section id="references" className="py-16 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-gray-900"></div>
+    <section id="references" className="py-24 relative">
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #050b18 0%, #07101f 50%, #050b18 100%)' }} />
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Academic <span className="gradient-text">References</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-5" style={{ color: '#e2f0ff' }}>
+            My <span className="gradient-text">References</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-blue-500 mx-auto mb-4"></div>
-          <p className="text-gray-400 text-base max-w-xl mx-auto">
-            Academic supervisors from the Department of Computer Engineering, University of Jaffna.
-          </p>
+          <div className="w-24 h-1 mx-auto rounded-full mb-6" style={{ background: 'linear-gradient(90deg, #00d4ff, #8b5cf6)' }} />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {references.map((refItem, index) => (
+        <div className="max-w-3xl mx-auto">
+          {references.map((item, index) => (
             <motion.div
-              key={refItem.name}
+              key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-orange-500/50 transition-all"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="rounded-2xl p-8 text-center border"
+              style={{
+                background: 'rgba(13,26,46,0.6)',
+                borderColor: 'rgba(0,212,255,0.15)',
+                backdropFilter: 'blur(16px)',
+              }}
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center text-orange-400">
-                  <UserCheck className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">{refItem.name}</h3>
-                  <p className="text-orange-400 font-medium text-sm">{refItem.title}</p>
-                </div>
+              <div
+                className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center border"
+                style={{
+                  background: 'rgba(0,212,255,0.12)',
+                  borderColor: 'rgba(0,212,255,0.25)',
+                }}
+              >
+                <Award className="w-8 h-8" style={{ color: '#00d4ff' }} />
               </div>
-
-              <div className="space-y-2 text-sm text-gray-300 mb-4 border-l-2 border-gray-700 pl-3">
-                <p className="flex items-center gap-2">
-                  <Building2 className="w-4 h-4 text-gray-400 flex-shrink-0" />
-                  <span>{refItem.department}, {refItem.institution}</span>
-                </p>
-              </div>
-
-              <div className="space-y-2 text-sm">
-                <a
-                  href={`mailto:${refItem.email}`}
-                  className="flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-orange-400" />
-                  <span>{refItem.email}</span>
-                </a>
-                <a
-                  href={`tel:${refItem.phone.replace(/\s+/g, '')}`}
-                  className="flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors"
-                >
-                  <Phone className="w-4 h-4 text-blue-400" />
-                  <span>{refItem.phone}</span>
-                </a>
-              </div>
+              <h3 className="text-xl font-bold mb-2" style={{ color: '#e2f0ff' }}>{item.name}</h3>
+              <p className="text-sm font-semibold mb-4" style={{ color: '#00d4ff' }}>{item.organization}</p>
+              <p className="leading-relaxed text-sm max-w-xl mx-auto" style={{ color: 'rgba(226,240,255,0.65)' }}>
+                {item.text}
+              </p>
             </motion.div>
           ))}
         </div>

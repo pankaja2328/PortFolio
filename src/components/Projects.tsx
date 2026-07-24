@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Github, ExternalLink, Cpu, Wifi, Zap, HeartPulse, Droplets, Video } from 'lucide-react';
+import { Github, Cpu, Zap, HeartPulse, Droplets, Video } from 'lucide-react';
 
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -86,8 +86,8 @@ const Projects = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <section id="projects" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-gray-800"></div>
+    <section id="projects" className="py-24 relative">
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #050b18 0%, #080f1e 50%, #050b18 100%)' }} />
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           ref={ref}
@@ -96,11 +96,11 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-5" style={{ color: '#e2f0ff' }}>
             Technical <span className="gradient-text">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <div className="w-24 h-1 mx-auto rounded-full mb-6" style={{ background: 'linear-gradient(90deg, #00d4ff, #8b5cf6)' }} />
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(226,240,255,0.55)' }}>
             Featured engineering work spanning low-level C firmware, custom PCB wearables, wireless IoT telemetry, and AI systems.
           </p>
         </motion.div>
@@ -116,11 +116,15 @@ const Projects = () => {
             <button
               key={category.id}
               onClick={() => setFilter(category.id)}
-              className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
-                filter === category.id
-                  ? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-lg shadow-orange-500/25'
-                  : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 hover:text-white border border-gray-700/50'
-              }`}
+              className="px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300"
+              style={{
+                background: filter === category.id
+                  ? 'linear-gradient(135deg, #00d4ff, #0099b8)'
+                  : 'rgba(13,26,46,0.6)',
+                color: filter === category.id ? '#050b18' : 'rgba(226,240,255,0.7)',
+                border: filter === category.id ? 'none' : '1px solid rgba(0,212,255,0.15)',
+                boxShadow: filter === category.id ? '0 0 20px rgba(0,212,255,0.3)' : 'none',
+              }}
             >
               {category.label}
             </button>
@@ -135,7 +139,20 @@ const Projects = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-              className="group bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300 flex flex-col justify-between"
+              className="group rounded-xl overflow-hidden transition-all duration-300 flex flex-col justify-between"
+              style={{
+                background: 'rgba(13,26,46,0.6)',
+                border: '1px solid rgba(0,212,255,0.12)',
+                backdropFilter: 'blur(12px)',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = 'rgba(0,212,255,0.35)';
+                e.currentTarget.style.boxShadow = '0 0 30px rgba(0,212,255,0.1)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'rgba(0,212,255,0.12)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
             >
               <div>
                 <div className="relative overflow-hidden h-52">
@@ -144,22 +161,37 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
-                  
-                  <span className="absolute top-4 left-4 px-3 py-1 bg-gray-900/80 backdrop-blur-md border border-gray-700 text-orange-400 text-xs font-bold rounded-full">
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #0d1a2e 0%, transparent 60%)' }} />
+
+                  <span
+                    className="absolute top-4 left-4 px-3 py-1 text-xs font-bold rounded-full"
+                    style={{
+                      background: 'rgba(5,11,24,0.85)',
+                      border: '1px solid rgba(0,212,255,0.25)',
+                      color: '#00d4ff',
+                      backdropFilter: 'blur(8px)',
+                    }}
+                  >
                     {project.year}
                   </span>
 
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-orange-500/20 backdrop-blur-md rounded-full flex items-center justify-center border border-orange-500/30">
-                    <project.icon className="w-5 h-5 text-orange-400" />
+                  <div
+                    className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center border"
+                    style={{
+                      background: 'rgba(0,212,255,0.15)',
+                      borderColor: 'rgba(0,212,255,0.3)',
+                      backdropFilter: 'blur(8px)',
+                    }}
+                  >
+                    <project.icon className="w-5 h-5" style={{ color: '#00d4ff' }} />
                   </div>
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-white group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-xl font-bold mb-2 transition-colors" style={{ color: '#e2f0ff' }}>
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                  <p className="mb-4 text-sm leading-relaxed" style={{ color: 'rgba(226,240,255,0.6)' }}>
                     {project.description}
                   </p>
 
@@ -167,7 +199,12 @@ const Projects = () => {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 bg-gray-700/40 border border-gray-600/40 text-gray-300 text-xs rounded-md"
+                        className="px-2.5 py-1 text-xs rounded-md border"
+                        style={{
+                          background: 'rgba(0,212,255,0.06)',
+                          borderColor: 'rgba(0,212,255,0.15)',
+                          color: 'rgba(226,240,255,0.7)',
+                        }}
                       >
                         {tech}
                       </span>
@@ -176,13 +213,16 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className="px-6 pb-6 pt-0 border-t border-gray-700/30 flex items-center gap-4 mt-auto">
+              <div className="px-6 pb-6 pt-0 flex items-center gap-4 mt-auto border-t" style={{ borderColor: 'rgba(0,212,255,0.08)' }}>
                 {project.github !== '#' && (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors text-sm font-semibold pt-4"
+                    className="flex items-center gap-2 transition-colors text-sm font-semibold pt-4"
+                    style={{ color: 'rgba(226,240,255,0.7)' }}
+                    onMouseEnter={e => (e.currentTarget.style.color = '#00d4ff')}
+                    onMouseLeave={e => (e.currentTarget.style.color = 'rgba(226,240,255,0.7)')}
                   >
                     <Github className="w-4 h-4" />
                     <span>View Repository</span>

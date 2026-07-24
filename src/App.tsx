@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-950 text-white overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: '#050b18', color: '#e2f0ff' }}>
       <Header />
       <main>
         <Hero />
